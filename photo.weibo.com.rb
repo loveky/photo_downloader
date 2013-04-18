@@ -79,7 +79,9 @@ $photo_info_file = File.open(albumName + "/photo_info.txt", "w")
         photo_src = photo['pic_host'] + "/mw690/" + photo['pic_name']
 
         logger.info("Saving #{photo_src} to " + photo_folder + "/#{photo['pic_name']}")
-        save_photo(photo_folder + "/#{photo['pic_name']}", photo_src, agent)
+        unless save_photo(photo_folder + "/#{photo['pic_name']}", photo_src, agent)
+            logger.error("Failed to save #{photo['pic_name']}")
+        end
 
         $photo_info_file.puts "#{photo['photo_id']},#{photo['pic_name']},#{photo['caption']}"
         sleep download_interval

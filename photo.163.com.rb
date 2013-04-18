@@ -83,7 +83,9 @@ photoList.each_index do |photo_index|
     ourl            = "http://img" + server_id + ".ph.126.net/" + path
 
     logger.info("[#{photo_index + 1}/#{photoList.size}] Downloading #{ourl}")
-    save_photo(filename, ourl)
+    unless save_photo(filename, ourl)
+        logger.error("Failed to save #{filename}!!!")
+    end
 
     sleep download_interval
 end

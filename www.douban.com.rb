@@ -55,7 +55,9 @@ $photo_info_file = File.open(albumName + "/photo_info.txt", "w")
         photo_title     = photo['title']
 
         logger.info("Saving #{photo_filename} : #{photo_title}")
-        save_photo(photo_folder + "/#{photo_filename}", photo_src_large)
+        unless save_photo(photo_folder + "/#{photo_filename}", photo_src_large)
+            logger.error("Failed to save #{photo_filename}!!!")
+        end
         $photo_info_file.puts "#{photo_src_large},#{photo_title}"
 
         sleep download_interval

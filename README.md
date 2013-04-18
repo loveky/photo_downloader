@@ -58,3 +58,41 @@ This will generate the following directory structure.
         ├── 942e69f6gw1e0r778w99uj.jpg
         ├── 942e69f6gw1e0r77c11imj.jpg
         └── 942e69f6gw1e0r77ef0tmj.jpg
+        
+### _discuz.rb_ ###
+
+Used to download attachment pics from a discuz topic.
+    
+    cd photo_downloader
+    bundle install
+    ruby discuz.rb "http://bbs.running8.com/thread-153671-6-9.html"
+    
+This will generate the following directory structure.
+
+    给力厦门——2013风11马拉松之旅（第11页厦马选手高清大图)
+    ├── photos
+    │   ├── 150841tq9sz3t1bisqgbjq.jpg
+    │   ├── 150943luxepg6zgppgpkee.jpg
+    │   ├── 151056jy6yncpjrzj9gcjk.jpg
+    │   ├── 151142lmzlhb567brhjv1r.jpg
+    │   ├── 151144ephddpj3hd1dpo30.jpg
+    │   ├── 151252bdmqhe2eejahvfr3.jpg
+    │   ├── 151326kzlpga3pbjkgclb3.jpg
+    │   ├── 151354rarba5b55xg55bzg.jpg
+    │   ├── 151422vylfbqz7dooy75nf.jpg
+    │   ├── 152021gzq883w3pvzqs8yt.jpg
+    │   ├── 152745x99h8zu8yhz39em4.jpg
+    │   ├── 152920x54xzl03marmm8lr.jpg
+    │   ├── 152959tmljckn6zuexc6ol.jpg
+    │   ├── 153034e4ei9fhwhnibz0nd.jpg
+    │   ├── 153310i6c6ijh9011ei679.jpg
+    │   ├── 153418yoi0t05v8d8no55d.jpg
+    │   ├── 153656uiq4mkq24gcs854d.jpg
+    │   ├── 153814rxzoc6kx0hqqxldd.jpg
+    │   ├── 153847xyn9nolqzcfodep2.jpg
+    │   ├── 154157hwikfy116w0u1x6w.jpg
+    │   ├── 154240d3ke3ctdc3aakd7t.jpg
+    │   ├── 154436viirstnirrs9dyzd.jpg
+    │   ├── 154756s8eg77gy1xt8me01.jpg
+    │   └── 165727h9l8nbttpytey6da.jpg
+    └── topicURL.txt

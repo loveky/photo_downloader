@@ -5,15 +5,21 @@ require "zlib"
 
 # save photo from "url" to "path"
 def save_photo(file_path, url,  agent = nil)
-    File.open(file_path, 'w') do |output|
-        if agent.nil?
-            open(url) do |input|
-                output << input.read
+    begin
+        File.open(file_path, 'w') do |output|
+            if agent.nil?
+                open(url) do |input|
+                    output << input.read
+                end
+            else
+                output << agent.get(url).body
             end
-        else
-            output << agent.get(url).body
         end
+    rescue
+        return false
     end
+
+    return true
 end
 
 def tidy_url(origin_url)
