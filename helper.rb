@@ -78,9 +78,9 @@ def weibo_login(username, password)
     logindata['servertime'] = keys['servertime'] 
     logindata['nonce']      = keys['nonce'] 
     logindata['rsakv']      = keys['rsakv'] 
-    logindata['su']         = Base64.strict_encode64("ylzcylx@gmail.com".sub("@","%40"))
+    logindata['su']         = Base64.strict_encode64(username.sub("@","%40"))
 
-    pwdkey  = keys['servertime'].to_s + "\t" + keys['nonce'].to_s + "\n" + "rdpschina".to_s
+    pwdkey  = keys['servertime'].to_s + "\t" + keys['nonce'].to_s + "\n" + password.to_s
     pub     = OpenSSL::PKey::RSA::new
     pub.e   = 65537
     pub.n   = OpenSSL::BN.new(keys['pubkey'],16)
